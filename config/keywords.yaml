@@ -1,0 +1,143 @@
+# DOCENT CURATOR RADAR
+# Keyword Master v1.0
+
+keyword_groups:
+
+  docent_training:
+    - 도슨트
+    - 도슨트 양성
+    - 도슨트 양성과정
+    - 도슨트 양성교육
+    - 도슨트 아카데미
+    - 도슨트 교육
+    - 도슨트 기초과정
+    - 도슨트 심화과정
+    - 도슨트 전문가과정
+    - 도슨트 워크숍
+    - 도슨트 클래스
+    - docent
+    - docent academy
+
+  docent_recruitment:
+    - 도슨트 모집
+    - 도슨트 선발
+    - 전시해설사 모집
+    - 전시해설 자원봉사
+    - 전시해설 자원활동가
+    - 전시해설 인력
+    - 전시안내 활동가
+    - 전시해설 봉사자
+    - 미술관 해설사
+    - 박물관 해설사
+    - 문화유산 해설사
+
+  curator_training:
+    - 큐레이터
+    - 큐레이터 양성
+    - 큐레이터 아카데미
+    - 큐레이터 교육
+    - 큐레이터 실무
+    - 큐레이터 과정
+    - 전시기획자 양성
+    - 전시기획 교육
+    - 전시기획 실무
+    - curatorial
+    - curator academy
+
+  curatorial_practice:
+    - 학예사
+    - 학예연구사
+    - 학예인력
+    - 예비학예인력
+    - 학예실무
+    - 학예연수
+    - 학예인턴
+    - 미술관 전문인력
+    - 박물관 전문인력
+    - 소장품 관리 교육
+    - 박물관학
+    - 뮤지엄 스터디
+
+  museum_education:
+    - 박물관 교육
+    - 미술관 교육
+    - 전시해설 교육
+    - 전시해설 양성
+    - 문화유산 교육
+    - 국가유산 해설
+    - 문화예술 해설
+    - 미술사 아카데미
+    - 박물관 아카데미
+    - 미술관 아카데미
+
+recruitment_terms:
+  - 모집
+  - 접수
+  - 신청
+  - 선발
+  - 수강생
+  - 교육생
+  - 참여자
+  - 신규
+  - 추가모집
+  - 추가 모집
+  - 모집 연장
+  - 개강
+  - 수강신청
+
+schedule_terms:
+  preferred:
+    - 토요일
+    - 일요일
+    - 주말
+    - 야간
+    - 저녁
+    - 온라인
+    - 비대면
+    - 줌
+    - ZOOM
+    - 혼합형
+  review_required:
+    - 평일
+    - 주간
+    - 대면
+    - 필수 출석
+
+activity_terms:
+  - 현장실습
+  - 실습
+  - 도슨트 활동
+  - 전시해설 활동
+  - 활동 연계
+  - 활동 기회
+  - 유급
+  - 활동비
+  - 자원봉사
+  - 수료 후 활동
+
+# Never discard an official notice solely because
+# it contains one of these words.
+review_flags:
+  - 채용
+  - 계약직
+  - 정규직
+  - 경력자
+  - 전공자
+  - 학위
+  - 민간자격
+  - 자격증
+  - 국가자격
+
+search_templates:
+  - "{institution} 도슨트 모집"
+  - "{institution} 도슨트 양성과정"
+  - "{institution} 전시해설사 교육"
+  - "{institution} 전시해설 자원활동가"
+  - "{institution} 큐레이터 교육"
+  - "{institution} 학예인력 양성"
+  - "{institution} 전시기획 아카데미"
+  - "2026 도슨트 교육 모집"
+  - "2026 큐레이터 양성과정 모집"
+  - "2026 미술관 도슨트 선발"
+  - "2027 도슨트 양성과정 모집"
+  - "2027 큐레이터 교육 모집"
