@@ -1,0 +1,61 @@
+name: ART FIELD NOTES V4 Audit
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Validate V4 source completeness
+        run: |
+          python - <<'PY'
+          import ast
+          from pathlib import Path
+          p = Path('src/art_field_v4.py')
+          code = p.read_text(encoding='utf-8')
+          tree = ast.parse(code)
+          funcs = {n.name for n in tree.body if isinstance(n, ast.FunctionDef)}
+          required = {'fetch', 'parse_period', 'classify', 'evaluate', 'discover', 'render', 'main'}
+          assert required <= funcs, f'Incomplete V4: {required - funcs}'
+          assert 'if __name__' in code and 'main()' in code
+          assert len(code.splitlines()) >= 250, 'V4 file truncated'
+          print('V4 complete:', len(code.splitlines()), 'lines')
+          PY
+      - name: Audit live sources and create preview
+        env:
+          SEND_EMAIL: 'false'
+        run: python src/art_field_v4.py
+      - name: Validate actual JSON and HTML
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j = Path('data/art_field_final_results.json')
+          h = Path('reports/art_field_final_preview.html')
+          assert j.exists() and j.stat().st_size > 100
+          assert h.exists() and h.stat().st_size > 1000
+          data = json.loads(j.read_text(encoding='utf-8'))
+          assert isinstance(data.get('items'), list)
+          assert isinstance(data.get('sources'), list) and data['sources']
+          assert any(x.get('ok') for x in data['sources'])
+          print('AUDIT:', json.dumps({'counts': data['counts'], 'summary': data['summary'], 'sources_ok': sum(x['ok'] for x in data['sources']), 'sources_total': len(data['sources'])}, ensure_ascii=False))
+          PY
+      - name: Upload audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: art-field-v4-audit
+          path: |
+            data/art_field_final_results.json
+            reports/art_field_final_preview.html
+          if-no-files-found: error
+          retention-days: 14
