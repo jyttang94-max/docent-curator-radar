@@ -1,0 +1,39 @@
+name: ART FIELD NOTES V4 Repair Test
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Refresh candidates
+        run: python src/collector_v2.py
+      - name: Verify and classify
+        run: python src/v4_repair.py
+      - name: Render preview
+        run: python src/v4_mail.py
+      - name: Check results
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('data/verified_v4.json').read_text())
+          assert sum(d['counts'].values())==len(d['items'])
+          assert Path('reports/art_field_v4_preview.html').exists()
+          print('V4 counts:',d['counts'],'excluded:',len(d['excluded']))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: art-field-v4-repair-results
+          path: |
+            data/verified_v4.json
+            reports/art_field_v4_preview.html
+            data/collection_status.json
+          if-no-files-found: error
