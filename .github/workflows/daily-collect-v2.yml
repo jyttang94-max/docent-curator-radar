@@ -1,0 +1,113 @@
+name: Docent Curator Radar V2
+
+on:
+  schedule:
+    # 07:00 KST
+    - cron: "0 22 * * *"
+    # 17:00 KST
+    - cron: "0 8 * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: docent-curator-radar-v2
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    name: Validate and collect V2
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Validate V2 collector
+        run: |
+          python -m py_compile src/collector_v2.py
+          python - <<'PY'
+          from src.collector_v2 import (
+              read_yaml, matched, extract_links, normalized
+          )
+
+          settings = read_yaml("config/settings.yaml")
+          institutions = read_yaml("config/institutions.yaml")
+          keywords = read_yaml("config/keywords.yaml")
+
+          assert settings["collection"]["enabled"]
+          assert len(institutions["institutions"]) >= 20
+          assert "docent_training" in keywords["keyword_groups"]
+
+          hits = matched(
+              "2026 도슨트 양성과정 교육생 모집",
+              ["도슨트", "큐레이터", "교육생"]
+          )
+          assert "도슨트" in hits
+          assert "교육생" in hits
+          assert "큐레이터" not in hits
+
+          html = '<a href="/notice/123">도슨트 모집</a>'
+          _, links = extract_links(
+              html, "https://example.org/"
+          )
+          assert links[0]["url"] == (
+              "https://example.org/notice/123"
+          )
+          assert normalized(
+              "https://example.org/a/#section"
+          ) == "https://example.org/a"
+
+          print("V2 validation passed")
+          PY
+
+      - name: Run V2 collector
+        id: collector
+        continue-on-error: true
+        run: |
+          python -m src.collector_v2
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: docent-radar-v2-results
+          path: |
+            data/
+            reports/
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Commit collection results
+        if: steps.collector.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ reports/
+
+          if ! git diff --cached --quiet; then
+            git commit -m "data: update docent radar V2"
+            git push
+          else
+            echo "No changes to commit"
+          fi
+
+      - name: Report collection failure
+        if: steps.collector.outcome == 'failure'
+        run: |
+          echo "::error::V2 collection failed"
+          exit 1
