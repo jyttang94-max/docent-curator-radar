@@ -1,0 +1,58 @@
+
+name: Art Field Notes V3 Verification Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      send_email:
+        description: "Send test email"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  verify-and-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate Python files
+        run: |
+          python -m py_compile src/verify_v3.py
+          python -m py_compile src/naver_mail_v3.py
+
+      - name: Verify collected opportunities
+        run: python src/verify_v3.py
+
+      - name: Generate preview or send test
+        env:
+          SEND_EMAIL: ${{ inputs.send_email }}
+          NAVER_EMAIL: ${{ secrets.NAVER_EMAIL }}
+          NAVER_PASSWORD: ${{ secrets.NAVER_PASSWORD }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+        run: python src/naver_mail_v3.py
+
+      - name: Upload verification results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: art-field-notes-v3-results
+          path: |
+            data/verified_v3.json
+            reports/mail_preview_v3.html
+          if-no-files-found: warn
+          retention-days: 14
