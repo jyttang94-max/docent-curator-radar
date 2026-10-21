@@ -1,0 +1,60 @@
+project:
+  name: docent-curator-radar
+  timezone: Asia/Seoul
+  version: "1.0"
+
+collection:
+  enabled: true
+  lookback_days: 30
+  request_timeout_seconds: 20
+  max_retries: 3
+  delay_between_requests_seconds: 2
+  follow_pagination: true
+  detect_changes: true
+  save_history: true
+
+schedule:
+  morning: "07:00"
+  evening: "17:00"
+
+regions:
+  primary:
+    - 서울
+    - 경기
+    - 인천
+  nationwide_online: true
+
+program_types:
+  - docent_training
+  - docent_recruitment
+  - curator_training
+  - exhibition_planning
+  - museum_education
+  - curatorial_practice
+
+preferences:
+  weekend: true
+  weekday_evening_after: "18:30"
+  online: true
+  hybrid: true
+  include_paid_programs: true
+  include_weekday_daytime: true
+
+verification:
+  require_official_source: true
+  track_deadlines: true
+  track_additional_recruitment: true
+  track_schedule_changes: true
+  distinguish_private_certifications: true
+  distinguish_activity_opportunities: true
+  report_collection_failures: true
+
+report:
+  output_formats:
+    - json
+    - markdown
+  deadline_alert_days:
+    - 7
+    - 3
+    - 1
+  show_new_only: false
