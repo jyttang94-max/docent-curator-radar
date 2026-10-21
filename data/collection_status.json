@@ -1,0 +1,237 @@
+{
+  "checked_at": "2026-10-21T02:25:02.736376+00:00",
+  "sources": [
+    {
+      "institution": "온느뮤지엄",
+      "source_url": "https://www.onnemuseum.com/docentacademy",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 2,
+      "http_status": 200
+    },
+    {
+      "institution": "온느뮤지엄",
+      "source_url": "https://www.onnemuseum.com/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 3,
+      "http_status": 200
+    },
+    {
+      "institution": "서울도슨트협회",
+      "source_url": "https://www.seouldocent.kr/news",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 16,
+      "http_status": 200
+    },
+    {
+      "institution": "한국전통미술융합진흥원",
+      "source_url": "https://www.ktaca.or.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 10,
+      "http_status": 200
+    },
+    {
+      "institution": "한국전통미술융합진흥원",
+      "source_url": "https://www.ktaca.or.kr/168",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 4,
+      "http_status": 200
+    },
+    {
+      "institution": "한국전통미술융합진흥원",
+      "source_url": "https://ktaca.or.kr/184",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 6,
+      "http_status": 200
+    },
+    {
+      "institution": "국립중앙박물관",
+      "source_url": "https://www.museum.go.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 4,
+      "http_status": 200
+    },
+    {
+      "institution": "국립민속박물관",
+      "source_url": "https://www.nfm.go.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "failed",
+      "candidates": 0,
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.nfm.go.kr', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.nfm.go.kr', port=443) at 0x7f14746f4e50>, 'Connection to www.nfm.go.kr timed out. (connect timeout=20)'))"
+    },
+    {
+      "institution": "국립고궁박물관",
+      "source_url": "https://www.gogung.go.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 1,
+      "http_status": 200
+    },
+    {
+      "institution": "대한민국역사박물관",
+      "source_url": "https://www.much.go.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "failed",
+      "candidates": 0,
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.much.go.kr', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.much.go.kr', port=443) at 0x7f14746f5250>, 'Connection to www.much.go.kr timed out. (connect timeout=20)'))"
+    },
+    {
+      "institution": "국립현대미술관",
+      "source_url": "https://www.mmca.go.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "failed",
+      "candidates": 0,
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.mmca.go.kr', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mmca.go.kr', port=443) at 0x7f1474151c50>, 'Connection to www.mmca.go.kr timed out. (connect timeout=20)'))"
+    },
+    {
+      "institution": "서울시립미술관",
+      "source_url": "https://sema.seoul.go.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 0,
+      "http_status": 200
+    },
+    {
+      "institution": "경기도미술관",
+      "source_url": "https://gmoma.ggcf.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 0,
+      "http_status": 200
+    },
+    {
+      "institution": "경기도박물관",
+      "source_url": "https://musenet.ggcf.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 0,
+      "http_status": 200
+    },
+    {
+      "institution": "인천아트플랫폼",
+      "source_url": "https://inartplatform.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 2,
+      "http_status": 200
+    },
+    {
+      "institution": "인천아트플랫폼",
+      "source_url": "https://inartplatform.kr/home/home",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 2,
+      "http_status": 200
+    },
+    {
+      "institution": "리움미술관",
+      "source_url": "https://www.leeumhoam.org/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 0,
+      "http_status": 200
+    },
+    {
+      "institution": "호암미술관",
+      "source_url": "https://www.leeumhoam.org/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 0,
+      "http_status": 200
+    },
+    {
+      "institution": "아모레퍼시픽미술관",
+      "source_url": "https://apma.amorepacific.com/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 0,
+      "http_status": 200
+    },
+    {
+      "institution": "아트선재센터",
+      "source_url": "https://artsonje.org/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 1,
+      "http_status": 200
+    },
+    {
+      "institution": "대림미술관",
+      "source_url": "https://www.daelimmuseum.org/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 0,
+      "http_status": 200
+    },
+    {
+      "institution": "뮤지엄 산",
+      "source_url": "https://www.museumsan.org/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "failed",
+      "candidates": 0,
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.museumsan.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.museumsan.org', port=443) at 0x7f1474952e90>, 'Connection to www.museumsan.org timed out. (connect timeout=20)'))"
+    },
+    {
+      "institution": "인천문화재단",
+      "source_url": "https://ifac.or.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 0,
+      "http_status": 200
+    },
+    {
+      "institution": "경기문화재단",
+      "source_url": "https://www.ggcf.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 0,
+      "http_status": 200
+    },
+    {
+      "institution": "서울문화재단",
+      "source_url": "https://www.sfac.or.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 0,
+      "http_status": 200
+    },
+    {
+      "institution": "한국박물관협회",
+      "source_url": "https://www.museum.or.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 0,
+      "http_status": 200
+    },
+    {
+      "institution": "한국사립미술관협회",
+      "source_url": "https://www.artmuseums.or.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "failed",
+      "candidates": 0,
+      "error": "SSLError: HTTPSConnectionPool(host='www.artmuseums.or.kr', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))"
+    },
+    {
+      "institution": "예술경영지원센터",
+      "source_url": "https://www.gokams.or.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 0,
+      "http_status": 200
+    },
+    {
+      "institution": "한국문화예술교육진흥원",
+      "source_url": "https://www.arte.or.kr/",
+      "checked_at": "2026-10-21T02:25:02.736376+00:00",
+      "status": "success",
+      "candidates": 0,
+      "http_status": 200
+    }
+  ]
+}
