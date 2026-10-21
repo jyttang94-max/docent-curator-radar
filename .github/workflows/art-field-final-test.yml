@@ -1,0 +1,46 @@
+name: Art Field Notes Final Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      send_email:
+        description: "Send NAVER email after verification (default off)"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  collect-verify-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Validate code
+        run: python -m py_compile src/art_field_final.py
+      - name: Collect, verify and render
+        env:
+          SEND_EMAIL: ${{ inputs.send_email }}
+          NAVER_EMAIL: ${{ secrets.NAVER_EMAIL }}
+          NAVER_PASSWORD: ${{ secrets.NAVER_PASSWORD }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+        run: python src/art_field_final.py
+      - name: Upload audit and HTML
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: art-field-final-audit
+          path: |
+            data/art_field_final_results.json
+            reports/art_field_final_preview.html
+          if-no-files-found: warn
+          retention-days: 14
