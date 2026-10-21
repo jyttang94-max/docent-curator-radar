@@ -1,0 +1,47 @@
+
+name: Docent Radar Mail V2 Manual Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      send_email:
+        description: "Send test email (false = preview only)"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  preview-or-send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate code
+        run: python -m py_compile src/naver_mail_v2.py
+
+      - name: Build preview or send test email
+        env:
+          SEND_EMAIL: ${{ inputs.send_email }}
+          NAVER_EMAIL: ${{ secrets.NAVER_EMAIL }}
+          NAVER_PASSWORD: ${{ secrets.NAVER_PASSWORD }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+        run: python src/naver_mail_v2.py
+
+      - name: Upload HTML preview
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: art-field-notes-v2-preview
+          path: reports/mail_preview_v2.html
+          if-no-files-found: ignore
