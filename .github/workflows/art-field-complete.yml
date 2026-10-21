@@ -1,0 +1,73 @@
+name: Art Field Notes Complete Validation
+
+on:
+  workflow_dispatch:
+    inputs:
+      send_email:
+        description: "Send NAVER email (default OFF)"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Check full source and test date parsing
+        run: |
+          python - <<'PY'
+          import ast
+          from pathlib import Path
+          path = Path('src/art_field_complete.py')
+          source = path.read_text(encoding='utf-8')
+          tree = ast.parse(source)
+          names = {n.name for n in tree.body if isinstance(n, ast.FunctionDef)}
+          required = {'fetch','parse_period','classify','evaluate','discover','render','main'}
+          assert required <= names, f'Incomplete source: {required - names}'
+          assert "if __name__ == '__main__':" in source, 'Missing entrypoint'
+          print('Full source validation passed')
+          PY
+      - name: Collect, verify, generate preview
+        env:
+          SEND_EMAIL: 'false'
+        run: python src/art_field_complete.py
+      - name: Check outputs and report
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a=Path('data/art_field_final_results.json')
+          h=Path('reports/art_field_final_preview.html')
+          assert a.is_file() and a.stat().st_size > 100, 'Missing audit JSON'
+          assert h.is_file() and h.stat().st_size > 1000, 'Missing HTML preview'
+          d=json.loads(a.read_text(encoding='utf-8'))
+          assert isinstance(d.get('items'), list)
+          assert d.get('sources')
+          print('AUDIT SUMMARY:', json.dumps({'counts':d.get('counts'), 'summary':d.get('summary'), 'sources_ok':sum(s.get('ok',False) for s in d['sources']), 'sources_total':len(d['sources'])}, ensure_ascii=False))
+          PY
+      - name: Upload audit and HTML
+        uses: actions/upload-artifact@v4
+        with:
+          name: art-field-complete-audit
+          path: |
+            data/art_field_final_results.json
+            reports/art_field_final_preview.html
+          if-no-files-found: error
+          retention-days: 14
+      - name: Send only after successful audit when explicitly requested
+        if: ${{ inputs.send_email == true }}
+        env:
+          SEND_EMAIL: 'true'
+          NAVER_EMAIL: ${{ secrets.NAVER_EMAIL }}
+          NAVER_PASSWORD: ${{ secrets.NAVER_PASSWORD }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+        run: python src/art_field_complete.py
