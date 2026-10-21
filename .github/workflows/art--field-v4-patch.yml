@@ -1,0 +1,41 @@
+name: ART FIELD NOTES V4 Corrected Audit
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Refresh institution candidates
+        run: python src/collector_v2.py
+      - name: Verify candidate pages
+        run: python src/verify_v3.py
+      - name: Apply corrected recruitment filter
+        run: python src/v4_filter_patch.py
+      - name: Render V4 newsletter preview
+        run: python src/v4_mail.py
+      - name: Assert outputs
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('data/verified_v4.json').read_text(encoding='utf-8'))
+          h=Path('reports/art_field_v4_preview.html').read_text(encoding='utf-8')
+          assert isinstance(d['items'], list) and '<html' in h
+          assert sum(d['counts'].values()) == len(d['items'])
+          print('Checked:',len(d['items'])+len(d['excluded']),'Retained:',d['counts'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: art-field-v4-corrected
+          path: |
+            data/verified_v4.json
+            reports/art_field_v4_preview.html
+          if-no-files-found: error
