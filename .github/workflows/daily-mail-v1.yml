@@ -1,0 +1,35 @@
+
+name: Docent Radar Naver Mail V1
+
+on:
+  schedule:
+    # Every day at 08:00 KST
+    - cron: "0 23 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  send-mail:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate mail code
+        run: python -m py_compile src/naver_mail_v1.py
+
+      - name: Send Naver email
+        env:
+          NAVER_EMAIL: ${{ secrets.NAVER_EMAIL }}
+          NAVER_PASSWORD: ${{ secrets.NAVER_PASSWORD }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+        run: python -m src.naver_mail_v1
