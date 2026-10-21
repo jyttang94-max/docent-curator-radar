@@ -1,0 +1,27 @@
+name: ART FIELD NOTES V4 Email Test
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  send-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Refresh candidates
+        run: python src/collector_v2.py
+      - name: Verify and classify
+        run: python src/v4_repair_fixed.py
+      - name: Render V4 newsletter
+        run: python src/v4_mail.py
+      - name: Send test email
+        env:
+          NAVER_EMAIL: ${{ secrets.NAVER_EMAIL }}
+          NAVER_PASSWORD: ${{ secrets.NAVER_PASSWORD }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+        run: python src/art_field_send_test.py
