@@ -1,9 +1,9 @@
 # Docent Curator Radar - 수집 결과
 
-- 실행 시각(UTC): 2026-10-23T12:56:51.911753+00:00
+- 실행 시각(UTC): 2026-10-24T00:07:41.184832+00:00
 - 접속 성공: 25/29
 - 접속 실패: 4
-- 신규 또는 변경 후보: 5
+- 신규 또는 변경 후보: 4
 
 > 모집 중 여부와 마감일은 아직 검증되지 않은 후보입니다.
 
@@ -13,7 +13,6 @@
 - [온느뮤지엄] [전문 도슨트 양성교육 과정 월, 수 19:00](https://booking.naver.com/booking/12/bizes/1197288/items/8002078?startDateTime=2026-07-22T00%3A00%3A00%2B09%3A00&tab=details) - title_changed
 - [한국전통미술융합진흥원] [👤 전문인력 양성 도슨트·큐레이터](https://ktaca.or.kr/184) - title_changed
 - [한국전통미술융합진흥원] [전문인력 양성](https://ktaca.or.kr/184) - title_changed
-- [국립중앙박물관] [2026년 국립중앙박물관 고객지원팀 공무직(중국어 전시해설사) 채용 최종합격자 공고](https://www.museum.go.kr/MUSEUM/contents/M0701030000.do?schM=view&catCustomType=post&arcId=24058) - new_candidate
 
 ## 접속 실패
 
