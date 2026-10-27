@@ -11,7 +11,7 @@
       "도슨트 양성",
       "도슨트 양성교육"
     ],
-    "last_seen": "2026-10-26T14:40:03.966329+00:00",
+    "last_seen": "2026-10-27T00:58:54.529513+00:00",
     "recruitment_terms": [],
     "activity_terms": [],
     "schedule_terms": [],
@@ -30,7 +30,7 @@
       "도슨트 양성",
       "도슨트 양성교육"
     ],
-    "last_seen": "2026-10-26T14:40:03.966329+00:00",
+    "last_seen": "2026-10-27T00:58:54.529513+00:00",
     "recruitment_terms": [],
     "activity_terms": [],
     "schedule_terms": [],
@@ -49,31 +49,12 @@
       "큐레이터",
       "전문인력 양성"
     ],
-    "last_seen": "2026-10-26T14:40:03.966329+00:00",
+    "last_seen": "2026-10-27T00:58:54.529513+00:00",
     "recruitment_terms": [],
     "activity_terms": [],
     "schedule_terms": [],
     "verification": "unverified_candidate",
     "first_seen": "2026-10-21T02:25:02.736376+00:00"
-  },
-  {
-    "change": "new_candidate",
-    "id": "a0e2b42ed99acbf2ffb0",
-    "institution": "한국전통미술융합진흥원",
-    "title": "[2027년 상반기] 전문인력 양성과정 모집 [2027년 상반기] 전문인력 양성과정 모집",
-    "url": "https://www.ktaca.or.kr/199/?idx=175278751&bmode=view",
-    "source_url": "https://www.ktaca.or.kr/",
-    "keywords": [
-      "전문인력 양성"
-    ],
-    "last_seen": "2026-10-26T14:40:03.966329+00:00",
-    "recruitment_terms": [
-      "모집"
-    ],
-    "activity_terms": [],
-    "schedule_terms": [],
-    "verification": "unverified_candidate",
-    "first_seen": "2026-10-26T14:40:03.966329+00:00"
   },
   {
     "change": "title_changed",
@@ -85,28 +66,11 @@
     "keywords": [
       "전문인력 양성"
     ],
-    "last_seen": "2026-10-26T14:40:03.966329+00:00",
+    "last_seen": "2026-10-27T00:58:54.529513+00:00",
     "recruitment_terms": [],
     "activity_terms": [],
     "schedule_terms": [],
     "verification": "unverified_candidate",
     "first_seen": "2026-10-21T02:25:02.736376+00:00"
-  },
-  {
-    "change": "new_candidate",
-    "id": "fed6516e32bcd6ad59dc",
-    "institution": "국립중앙박물관",
-    "title": "2026년 11월 국립중앙박물관 교육 일정",
-    "url": "https://www.museum.go.kr/MUSEUM/contents/M0701010000.do?schM=view&catCustomType=united&catId=128&arcId=24061",
-    "source_url": "https://www.museum.go.kr/",
-    "keywords": [
-      "박물관 교육"
-    ],
-    "last_seen": "2026-10-26T14:40:03.966329+00:00",
-    "recruitment_terms": [],
-    "activity_terms": [],
-    "schedule_terms": [],
-    "verification": "unverified_candidate",
-    "first_seen": "2026-10-26T14:40:03.966329+00:00"
   }
 ]
