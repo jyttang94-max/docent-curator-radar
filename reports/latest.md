@@ -1,9 +1,9 @@
 # Docent Curator Radar - 수집 결과
 
-- 실행 시각(UTC): 2026-10-30T01:25:08.190057+00:00
+- 실행 시각(UTC): 2026-10-30T14:40:40.148678+00:00
 - 접속 성공: 27/29
 - 접속 실패: 2
-- 신규 또는 변경 후보: 6
+- 신규 또는 변경 후보: 7
 
 > 모집 중 여부와 마감일은 아직 검증되지 않은 후보입니다.
 
@@ -15,8 +15,9 @@
 - [한국전통미술융합진흥원] [👤 전문인력 양성 도슨트·큐레이터](https://ktaca.or.kr/184) - title_changed
 - [한국전통미술융합진흥원] [전문인력 양성](https://ktaca.or.kr/184) - title_changed
 - [한국전통미술융합진흥원] [도슨트 상세 안내](https://www.ktaca.or.kr/168) - title_changed
+- [국립중앙박물관] [2026년 하반기 학예사 자격증 및 경력인정대상기관 심의 결과](https://www.museum.go.kr/MUSEUM/contents/M0701020000.do?schM=view&anId=3858855) - new_candidate
 
 ## 접속 실패
 
-- 뮤지엄 산: https://www.museumsan.org/ - ConnectTimeout: HTTPSConnectionPool(host='www.museumsan.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.museumsan.org', port=443) at 0x7feea86be250>, 'Connection to www.museumsan.org timed out. (connect timeout=20)'))
+- 뮤지엄 산: https://www.museumsan.org/ - ConnectTimeout: HTTPSConnectionPool(host='www.museumsan.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.museumsan.org', port=443) at 0x7f54fc98dc90>, 'Connection to www.museumsan.org timed out. (connect timeout=20)'))
 - 한국사립미술관협회: https://www.artmuseums.or.kr/ - SSLError: HTTPSConnectionPool(host='www.artmuseums.or.kr', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
