@@ -1,9 +1,9 @@
 # Docent Curator Radar - 수집 결과
 
-- 실행 시각(UTC): 2026-11-03T15:35:57.457977+00:00
-- 접속 성공: 28/29
-- 접속 실패: 1
-- 신규 또는 변경 후보: 10
+- 실행 시각(UTC): 2026-11-04T01:45:01.441304+00:00
+- 접속 성공: 25/29
+- 접속 실패: 4
+- 신규 또는 변경 후보: 11
 
 > 모집 중 여부와 마감일은 아직 검증되지 않은 후보입니다.
 
@@ -19,7 +19,11 @@
 - [한국전통미술융합진흥원] [한국전통미술도슨트 과정](https://ktaca.or.kr/168) - title_changed
 - [한국전통미술융합진흥원] [국가유산 큐레이터 과정](https://ktaca.or.kr/186) - title_changed
 - [한국전통미술융합진흥원] [도슨트 상세 안내](https://www.ktaca.or.kr/168) - title_changed
+- [국립중앙박물관] [국립경주박물관 교육문화교류과 공무직(홍보원) 근로자 채용 최종합격자 발표](https://www.museum.go.kr/MUSEUM/contents/M0701030000.do?schM=view&catCustomType=post&arcId=24081) - new_candidate
 
 ## 접속 실패
 
-- 한국사립미술관협회: https://www.artmuseums.or.kr/ - SSLError: HTTPSConnectionPool(host='www.artmuseums.or.kr', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
+- 경기도미술관: https://gmoma.ggcf.kr/ - HTTPError: 403 Client Error: Forbidden for url: https://gmoma.ggcf.kr/
+- 경기도박물관: https://musenet.ggcf.kr/ - HTTPError: 403 Client Error: Forbidden for url: https://musenet.ggcf.kr/
+- 경기문화재단: https://www.ggcf.kr/ - HTTPError: 403 Client Error: Forbidden for url: https://www.ggcf.kr/
+- 한국사립미술관협회: https://www.artmuseums.or.kr/ - SSLError: HTTPSConnectionPool(host='www.artmuseums.or.kr', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1018)')))
