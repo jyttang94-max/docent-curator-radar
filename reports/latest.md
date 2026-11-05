@@ -1,6 +1,6 @@
 # Docent Curator Radar - 수집 결과
 
-- 실행 시각(UTC): 2026-11-05T01:53:09.194482+00:00
+- 실행 시각(UTC): 2026-11-05T15:54:45.104441+00:00
 - 접속 성공: 28/29
 - 접속 실패: 1
 - 신규 또는 변경 후보: 10
@@ -22,4 +22,4 @@
 
 ## 접속 실패
 
-- 한국사립미술관협회: https://www.artmuseums.or.kr/ - SSLError: HTTPSConnectionPool(host='www.artmuseums.or.kr', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
+- 한국사립미술관협회: https://www.artmuseums.or.kr/ - SSLError: HTTPSConnectionPool(host='www.artmuseums.or.kr', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1018)')))
