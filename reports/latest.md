@@ -1,8 +1,8 @@
 # Docent Curator Radar - 수집 결과
 
-- 실행 시각(UTC): 2026-11-17T17:11:48.709454+00:00
-- 접속 성공: 26/29
-- 접속 실패: 3
+- 실행 시각(UTC): 2026-11-18T03:12:34.516565+00:00
+- 접속 성공: 27/29
+- 접속 실패: 2
 - 신규 또는 변경 후보: 8
 
 > 모집 중 여부와 마감일은 아직 검증되지 않은 후보입니다.
@@ -20,6 +20,5 @@
 
 ## 접속 실패
 
-- 서울도슨트협회: https://www.seouldocent.kr/news - ReadTimeout: HTTPSConnectionPool(host='www.seouldocent.kr', port=443): Read timed out. (read timeout=20)
-- 뮤지엄 산: https://www.museumsan.org/ - ConnectTimeout: HTTPSConnectionPool(host='www.museumsan.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.museumsan.org', port=443) at 0x7a48ef445a10>, 'Connection to www.museumsan.org timed out. (connect timeout=20)'))
+- 서울시립미술관: https://sema.seoul.go.kr/ - HTTPError: 500 Server Error: Internal Server Error for url: https://sema.seoul.go.kr/
 - 한국사립미술관협회: https://www.artmuseums.or.kr/ - SSLError: HTTPSConnectionPool(host='www.artmuseums.or.kr', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1018)')))
