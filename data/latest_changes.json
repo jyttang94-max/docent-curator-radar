@@ -11,7 +11,7 @@
       "도슨트 양성",
       "도슨트 양성교육"
     ],
-    "last_seen": "2026-11-24T19:11:37.538428+00:00",
+    "last_seen": "2026-11-25T04:39:51.934121+00:00",
     "recruitment_terms": [],
     "activity_terms": [],
     "schedule_terms": [],
@@ -30,7 +30,7 @@
       "도슨트 양성",
       "도슨트 양성교육"
     ],
-    "last_seen": "2026-11-24T19:11:37.538428+00:00",
+    "last_seen": "2026-11-25T04:39:51.934121+00:00",
     "recruitment_terms": [],
     "activity_terms": [],
     "schedule_terms": [],
@@ -47,7 +47,7 @@
     "keywords": [
       "전문인력 양성"
     ],
-    "last_seen": "2026-11-24T19:11:37.538428+00:00",
+    "last_seen": "2026-11-25T04:39:51.934121+00:00",
     "recruitment_terms": [],
     "activity_terms": [],
     "schedule_terms": [],
@@ -65,7 +65,7 @@
       "도슨트",
       "한국전통미술도슨트"
     ],
-    "last_seen": "2026-11-24T19:11:37.538428+00:00",
+    "last_seen": "2026-11-25T04:39:51.934121+00:00",
     "recruitment_terms": [],
     "activity_terms": [],
     "schedule_terms": [],
@@ -83,7 +83,7 @@
       "큐레이터",
       "국가유산 큐레이터"
     ],
-    "last_seen": "2026-11-24T19:11:37.538428+00:00",
+    "last_seen": "2026-11-25T04:39:51.934121+00:00",
     "recruitment_terms": [],
     "activity_terms": [],
     "schedule_terms": [],
@@ -100,7 +100,7 @@
     "keywords": [
       "전문인력 양성"
     ],
-    "last_seen": "2026-11-24T19:11:37.538428+00:00",
+    "last_seen": "2026-11-25T04:39:51.934121+00:00",
     "recruitment_terms": [],
     "activity_terms": [],
     "schedule_terms": [],
@@ -118,7 +118,7 @@
       "도슨트",
       "한국전통미술도슨트"
     ],
-    "last_seen": "2026-11-24T19:11:37.538428+00:00",
+    "last_seen": "2026-11-25T04:39:51.934121+00:00",
     "recruitment_terms": [],
     "activity_terms": [],
     "schedule_terms": [],
@@ -137,11 +137,28 @@
       "큐레이터 과정",
       "국가유산 큐레이터"
     ],
-    "last_seen": "2026-11-24T19:11:37.538428+00:00",
+    "last_seen": "2026-11-25T04:39:51.934121+00:00",
     "recruitment_terms": [],
     "activity_terms": [],
     "schedule_terms": [],
     "verification": "unverified_candidate",
     "first_seen": "2026-10-21T02:25:02.736376+00:00"
+  },
+  {
+    "change": "new_candidate",
+    "id": "8b4164f3beb5cf249312",
+    "institution": "국립중앙박물관",
+    "title": "2026년 12월 국립중앙박물관 교육 일정",
+    "url": "https://www.museum.go.kr/MUSEUM/contents/M0701010000.do?schM=view&catCustomType=united&catId=128&arcId=24116",
+    "source_url": "https://www.museum.go.kr/",
+    "keywords": [
+      "박물관 교육"
+    ],
+    "last_seen": "2026-11-25T04:39:51.934121+00:00",
+    "recruitment_terms": [],
+    "activity_terms": [],
+    "schedule_terms": [],
+    "verification": "unverified_candidate",
+    "first_seen": "2026-11-25T04:39:51.934121+00:00"
   }
 ]
