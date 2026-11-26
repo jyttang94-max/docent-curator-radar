@@ -1,8 +1,8 @@
 # Docent Curator Radar - 수집 결과
 
-- 실행 시각(UTC): 2026-11-26T03:50:37.304199+00:00
-- 접속 성공: 24/29
-- 접속 실패: 5
+- 실행 시각(UTC): 2026-11-26T17:57:57.107418+00:00
+- 접속 성공: 28/29
+- 접속 실패: 1
 - 신규 또는 변경 후보: 8
 
 > 모집 중 여부와 마감일은 아직 검증되지 않은 후보입니다.
@@ -20,8 +20,4 @@
 
 ## 접속 실패
 
-- 경기도미술관: https://gmoma.ggcf.kr/ - HTTPError: 403 Client Error: Forbidden for url: https://gmoma.ggcf.kr/
-- 경기도박물관: https://musenet.ggcf.kr/ - HTTPError: 403 Client Error: Forbidden for url: https://musenet.ggcf.kr/
-- 뮤지엄 산: https://www.museumsan.org/ - ConnectTimeout: HTTPSConnectionPool(host='www.museumsan.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.museumsan.org', port=443) at 0x74443dbd56d0>, 'Connection to www.museumsan.org timed out. (connect timeout=20)'))
-- 경기문화재단: https://www.ggcf.kr/ - HTTPError: 403 Client Error: Forbidden for url: https://www.ggcf.kr/
 - 한국사립미술관협회: https://www.artmuseums.or.kr/ - SSLError: HTTPSConnectionPool(host='www.artmuseums.or.kr', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1018)')))
